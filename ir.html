@@ -3,184 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR資料まとめ - KaoriKei's Pages</title>
+    <title>初穂商事株式会社 第67回定時株主総会</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Yomogi&family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --color-primary: #6B3F2C;
+            --color-secondary: #FFE783;
+            --color-accent-1: #FFC045;
+            --color-accent-2: #FF9633;
+            --color-accent-3: #D44A05;
+            --text-dark: #334155;
+            --text-heading: #1e40af;
+            --text-subheading: #475569;
+            --bg-card: rgba(255, 255, 255, 0.8);
+        }
+        
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.4;
+            background-image: linear-gradient(120deg, #f9f5f1 0%, #f6f4fa 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
+        
         header {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .nav-link {
-            display: inline-block;
-            margin-bottom: 15px;
-            color: #3498db;
-            text-decoration: none;
-        }
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        h2 {
-            color: #3498db;
-            border-left: 4px solid #3498db;
-            padding-left: 10px;
-            margin-top: 40px;
-        }
-        .ir-container {
-            margin-bottom: 50px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .company-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed var(--color-accent-1);
         }
-        .company-name {
-            font-size: 1.5em;
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-accent-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .date {
+            font-size: 16px;
+            color: var(--text-subheading);
+            font-weight: 500;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        h2 {
+            font-size: 18px;
+            color: var(--text-heading);
+            border-bottom: 2px solid var(--color-accent-2);
+            padding-bottom: 8px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2:before {
+            content: "✦";
+            margin-right: 8px;
+            color: var(--color-accent-3);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-2);
+        }
+        
+        .highlight {
+            font-weight: 500;
+            background: linear-gradient(transparent 70%, var(--color-secondary) 70%);
+            display: inline;
+        }
+        
+        .bubble {
+            background-color: var(--color-secondary);
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        
+        .arrow {
+            display: inline-block;
+            color: var(--color-accent-3);
             font-weight: bold;
-            color: #2c3e50;
+            margin: 0 5px;
         }
-        .company-ticker {
-            font-size: 1.2em;
-            color: #7f8c8d;
+        
+        .data-point {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed var(--text-dark);
+            padding: 5px 0;
         }
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+        
+        .data-label {
+            font-weight: 500;
         }
-        .highlight-card {
-            background-color: white;
+        
+        .data-value {
+            font-weight: 700;
+            color: var(--color-accent-3);
+        }
+        
+        .trend-up:after {
+            content: "↗";
+            color: #10b981;
+            margin-left: 5px;
+        }
+        
+        .trend-down:after {
+            content: "↘";
+            color: #ef4444;
+            margin-left: 5px;
+        }
+        
+        .segment-chart {
+            height: 25px;
+            width: 100%;
+            display: flex;
+            margin: 15px 0;
+        }
+        
+        .segment-bar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .hand-drawn {
+            border: 2px solid var(--color-primary);
+            border-radius: 10px;
+            position: relative;
             padding: 15px;
-            border-radius: 4px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-        .highlight-title {
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 5px;
-        }
-        .highlight-value {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .highlight-change {
-            font-size: 0.9em;
-            color: green;
-        }
-        .change-negative {
-            color: red;
-        }
-        .visualizations {
+            background-color: white;
             margin-top: 30px;
         }
-        .visualization {
-            margin-bottom: 30px;
+        
+        .hand-drawn:before {
+            content: "目標";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: var(--color-accent-2);
+            padding: 0 10px;
+            border-radius: 15px;
+            font-weight: 500;
         }
-        .graph-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #ecf0f1;
+        
+        .board-member {
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #7f8c8d;
-            font-style: italic;
-            border-radius: 4px;
+            padding: 10px;
+            border-bottom: 1px dashed var(--color-accent-1);
         }
+        
+        .board-member-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--color-accent-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .board-member-name {
+            font-weight: 500;
+        }
+        
+        .board-member-position {
+            font-size: 12px;
+            color: var(--text-subheading);
+            margin-left: auto;
+        }
+        
+        .tag {
+            background-color: var(--color-accent-1);
+            color: white;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
         footer {
-            margin-top: 50px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            font-size: 0.9em;
-            color: #7f8c8d;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px dashed var(--color-accent-1);
+            font-size: 14px;
+            color: var(--text-subheading);
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="nav-link">← トップページに戻る</a>
-        <h1>IR資料まとめ</h1>
-        <p>企業の決算情報をグラフィックレコーディングで可視化しています</p>
-    </header>
-
-    <div class="ir-container">
-        <div class="company-info">
-            <div class="company-name">サンプル株式会社</div>
-            <div class="company-ticker">TSE: 1234</div>
-        </div>
-
-        <h2>2024年度 第2四半期決算ハイライト</h2>
+    <div class="container">
+        <header>
+            <h1>初穂商事株式会社 第67回定時株主総会</h1>
+            <div class="date">2025年3月27日（木）午前10時</div>
+        </header>
         
-        <div class="highlights">
-            <div class="highlight-card">
-                <div class="highlight-title">売上高</div>
-                <div class="highlight-value">1,234億円</div>
-                <div class="highlight-change">前年比 +12.5%</div>
-            </div>
-            <div class="highlight-card">
-                <div class="highlight-title">営業利益</div>
-                <div class="highlight-value">234億円</div>
-                <div class="highlight-change">前年比 +18.2%</div>
-            </div>
-            <div class="highlight-card">
-                <div class="highlight-title">純利益</div>
-                <div class="highlight-value">156億円</div>
-                <div class="highlight-change">前年比 +15.3%</div>
-            </div>
-            <div class="highlight-card">
-                <div class="highlight-title">1株あたり配当</div>
-                <div class="highlight-value">25円</div>
-                <div class="highlight-change">前年比 +5円</div>
-            </div>
-        </div>
-
-        <div class="visualizations">
-            <div class="visualization">
-                <h3>四半期売上高推移</h3>
-                <div class="graph-placeholder">
-                    ここに売上高グラフが表示されます
+        <div class="content">
+            <div class="column">
+                <div class="card">
+                    <h2>開催概要</h2>
+                    <p><span class="bubble">日時</span>2025年3月27日（木）午前10時</p>
+                    <p><span class="bubble">場所</span>愛知県産業労働センター（ウインクあいち）5階小ホール</p>
+                    <p><span class="bubble">議案</span></p>
+                    <ul>
+                        <li>第1号議案：剰余金処分の件（1株につき<span class="highlight">68円</span>の配当金）</li>
+                        <li>第2号議案：取締役（監査等委員であるものを除く）6名選任の件</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>2024年度業績ハイライト</h2>
+                    <div class="data-point">
+                        <span class="data-label">売上高</span>
+                        <span class="data-value trend-up">348億27百万円 <small>(前期比1.2％増)</small></span>
+                    </div>
+                    <div class="data-point">
+                        <span class="data-label">営業利益</span>
+                        <span class="data-value trend-down">12億88百万円 <small>(前期比9.3％減)</small></span>
+                    </div>
+                    <div class="data-point">
+                        <span class="data-label">経常利益</span>
+                        <span class="data-value trend-down">15億1百万円 <small>(前期比4.7％減)</small></span>
+                    </div>
+                    <div class="data-point">
+                        <span class="data-label">親会社株主に帰属する当期純利益</span>
+                        <span class="data-value trend-down">9億74百万円 <small>(前期比0.2％減)</small></span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>事業セグメント別売上構成</h2>
+                    <div class="data-point">
+                        <span class="data-label">内装建材事業</span>
+                        <span class="data-value trend-up">180億55百万円 <small>(前期比2.8%増)</small></span>
+                    </div>
+                    <div class="data-point">
+                        <span class="data-label">エクステリア事業</span>
+                        <span class="data-value trend-up">123億9百万円 <small>(前期比0.7%増)</small></span>
+                    </div>
+                    <div class="data-point">
+                        <span class="data-label">住環境関連事業</span>
+                        <span class="data-value trend-down">44億62百万円 <small>(前期比3.8%減)</small></span>
+                    </div>
+                    
+                    <div class="segment-chart">
+                        <div class="segment-bar" style="width: 51.8%; background-color: var(--color-primary);">
+                            51.8%
+                        </div>
+                        <div class="segment-bar" style="width: 35.4%; background-color: var(--color-accent-2);">
+                            35.4%
+                        </div>
+                        <div class="segment-bar" style="width: 12.8%; background-color: var(--color-accent-3);">
+                            12.8%
+                        </div>
+                    </div>
+                    <div style="display: flex; font-size: 12px; justify-content: space-between;">
+                        <span>■ 内装建材</span>
+                        <span>■ エクステリア</span>
+                        <span>■ 住環境関連</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="visualization">
-                <h3>事業セグメント別売上構成</h3>
-                <div class="graph-placeholder">
-                    ここに円グラフが表示されます
+            <div class="column">
+                <div class="card">
+                    <h2>経営環境</h2>
+                    <ul>
+                        <li>日本経済は<span class="highlight">雇用・所得環境の改善</span>により緩やかに回復</li>
+                        <li>世界経済ではアメリカの景気拡大が続く一方、中国では不動産市場の停滞が継続</li>
+                        <li>建設業界では公共投資は底堅いものの、<span class="highlight">新設住宅着工戸数は年80万戸を割り込むペース</span></li>
+                        <li>慢性的な職工不足や猛暑の影響により工期の遅延が発生</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>成長への取り組み</h2>
+                    <ul>
+                        <li>名古屋市内に<span class="highlight">熱田営業所南デリバリーセンター</span>を開設（2024年4月）</li>
+                        <li>株式会社アイシンでは滋賀営業所の移転や兵庫エリアの物流機能拡張</li>
+                        <li>株式会社外装との<span class="highlight">資本業務提携契約を締結</span>（四国方面へのエクステリア事業展開）</li>
+                        <li>人事制度を刷新（地域限定の働き方やキャリアパスの可視化）</li>
+                        <li>2024年7月1日付で<span class="highlight">普通株式1株につき2株の割合で株式分割</span>を実施</li>
+                    </ul>
+                </div>
+                
+                <div class="hand-drawn">
+                    <p>中長期目標として<span class="highlight">2027年までに連結売上高400億円</span>を目指す</p>
+                    <p>人的資本の充足や自社配送機能の維持向上に注力</p>
+                    <p>ROE 8％を超える資本効率とのバランスを重視</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="card">
+                    <h2>2025年度の経営環境見通し</h2>
+                    <ul>
+                        <li>雇用・所得環境の改善、<span class="highlight">賃金の上昇</span>による個人消費の持ち直し</li>
+                        <li><span class="highlight">大阪・関西万博の開催</span>やインバウンド需要が景気を後押し</li>
+                        <li>アメリカ大統領交代による通商政策の路線変更リスク</li>
+                        <li>住宅市場の冷え込みが当面続くと予想される厳しい外部環境</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2>取締役候補者</h2>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">斎藤 悟</div>
+                        <div class="board-member-position">代表取締役社長</div>
+                    </div>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">志岐 義幸</div>
+                        <div class="board-member-position">取締役副社長</div>
+                    </div>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">月東 達也</div>
+                        <div class="board-member-position">取締役</div>
+                    </div>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">渋川 信幸</div>
+                        <div class="board-member-position">取締役</div>
+                    </div>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">成田 哲人</div>
+                        <div class="board-member-position">取締役</div>
+                    </div>
+                    <div class="board-member">
+                        <div class="board-member-icon">再</div>
+                        <div class="board-member-name">磯部 隆英</div>
+                        <div class="board-member-position">取締役<span class="tag">社外</span><span class="tag">独立</span></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>対処すべき課題</h2>
+                    <ul>
+                        <li><span class="highlight">低迷した住環境関連事業の立て直し</span>が最優先課題</li>
+                        <li>幅広い工事種類に対応できる強みを活かし、工事売上の比重を高める</li>
+                        <li>東京および大阪営業所を含む<span class="highlight">大都市圏を新たな収益源に成長</span></li>
+                        <li>西日本地域へのデリバリーセンターの出店</li>
+                        <li>縮小する市場でも持続的な成長を目指すための<span class="highlight">最適なセールスミックスの実現</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <h2>事業展開ハイライト</h2>
-        <ul>
-            <li>新製品「サンプルプロ」の販売が好調、前年比売上30%増</li>
-            <li>海外展開を加速、アジア市場での売上が前年比45%増</li>
-            <li>研究開発投資を20%増加、次世代技術の開発に注力</li>
-            <li>ESG取り組み強化、CO2排出量を前年比15%削減</li>
-        </ul>
-
-        <h2>今後の展望</h2>
-        <p>当社は引き続きデジタルトランスフォーメーションを推進し、持続可能な成長を目指します。AI技術の活用による業務効率化と、環境に配慮した製品開発に注力していきます。通期の業績予想は売上高2,500億円（前年比+15%）、営業利益480億円（前年比+20%）を見込んでいます。</p>
+        
+        <footer>
+            初穂商事株式会社 第67回定時株主総会招集ご通知 | 証券コード：7425 | 2025年3月27日（木）
+        </footer>
     </div>
-
-    <footer>
-        <p>※このページはサンプルです。実際の企業情報ではありません。</p>
-        <p>&copy; 2025 KaoriKei. All rights reserved.</p>
-    </footer>
 </body>
 </html>
