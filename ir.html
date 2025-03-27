@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR資料まとめ - KaoriKei's Pages</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+        .ir-container {
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .company-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .company-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .company-ticker {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .highlight-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .highlight-title {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        .highlight-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .highlight-change {
+            font-size: 0.9em;
+            color: green;
+        }
+        .change-negative {
+            color: red;
+        }
+        .visualizations {
+            margin-top: 30px;
+        }
+        .visualization {
+            margin-bottom: 30px;
+        }
+        .graph-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #7f8c8d;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="nav-link">← トップページに戻る</a>
+        <h1>IR資料まとめ</h1>
+        <p>企業の決算情報をグラフィックレコーディングで可視化しています</p>
+    </header>
+
+    <div class="ir-container">
+        <div class="company-info">
+            <div class="company-name">サンプル株式会社</div>
+            <div class="company-ticker">TSE: 1234</div>
+        </div>
+
+        <h2>2024年度 第2四半期決算ハイライト</h2>
+        
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-title">売上高</div>
+                <div class="highlight-value">1,234億円</div>
+                <div class="highlight-change">前年比 +12.5%</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-title">営業利益</div>
+                <div class="highlight-value">234億円</div>
+                <div class="highlight-change">前年比 +18.2%</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-title">純利益</div>
+                <div class="highlight-value">156億円</div>
+                <div class="highlight-change">前年比 +15.3%</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-title">1株あたり配当</div>
+                <div class="highlight-value">25円</div>
+                <div class="highlight-change">前年比 +5円</div>
+            </div>
+        </div>
+
+        <div class="visualizations">
+            <div class="visualization">
+                <h3>四半期売上高推移</h3>
+                <div class="graph-placeholder">
+                    ここに売上高グラフが表示されます
+                </div>
+            </div>
+            
+            <div class="visualization">
+                <h3>事業セグメント別売上構成</h3>
+                <div class="graph-placeholder">
+                    ここに円グラフが表示されます
+                </div>
+            </div>
+        </div>
+
+        <h2>事業展開ハイライト</h2>
+        <ul>
+            <li>新製品「サンプルプロ」の販売が好調、前年比売上30%増</li>
+            <li>海外展開を加速、アジア市場での売上が前年比45%増</li>
+            <li>研究開発投資を20%増加、次世代技術の開発に注力</li>
+            <li>ESG取り組み強化、CO2排出量を前年比15%削減</li>
+        </ul>
+
+        <h2>今後の展望</h2>
+        <p>当社は引き続きデジタルトランスフォーメーションを推進し、持続可能な成長を目指します。AI技術の活用による業務効率化と、環境に配慮した製品開発に注力していきます。通期の業績予想は売上高2,500億円（前年比+15%）、営業利益480億円（前年比+20%）を見込んでいます。</p>
+    </div>
+
+    <footer>
+        <p>※このページはサンプルです。実際の企業情報ではありません。</p>
+        <p>&copy; 2025 KaoriKei. All rights reserved.</p>
+    </footer>
+</body>
+</html>
